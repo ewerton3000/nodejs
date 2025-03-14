@@ -1,0 +1,23 @@
+.overlay {
+    background:  rgba(0, 0, 0, 7);
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    right: 0;
+    top:0;
+    transition: opacity 500ms;
+    display: none;
+}
+
+.overlay.is-open{
+    display:block;
+}
+
+.popup{
+    background: #fff;
+    border-radius: 5px;
+    margin: 70px auto;
+    padding: 20px;
+    position:relative
+}

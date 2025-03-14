@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo ds-cookie</title>
+  <script src="https://cdn.jsdelivr.net/npm/ds-cookie@2.0.3/dist/ds-cookie.min.js"></script>
+</head>
+<body>
+
+  <h1>Exemplo de Gerenciamento de Cookies com ds-cookie</h1>
+
+  <button onclick="criarCookie()">Criar Cookie</button>
+  <button onclick="lerCookie()">Ler Cookie</button>
+  <button onclick="excluirCookie()">Excluir Cookie</button>
+
+  <script>
+    // Função para criar um cookie
+    function criarCookie() {
+      dsCookie.set('usuario', 'João', { expires: 7, path: '/', secure: true, sameSite: 'Strict' });
+      alert('Cookie criado!');
+    }
+
+    // Função para ler o cookie
+    function lerCookie() {
+      let usuario = dsCookie.get('usuario');
+      if (usuario) {
+        alert('Valor do cookie "usuario": ' + usuario);
+      } else {
+        alert('Cookie "usuario" não encontrado!');
+      }
+    }
+
+    // Função para excluir o cookie
+    function excluirCookie() {
+      dsCookie.remove('usuario', { path: '/' });
+      alert('Cookie "usuario" excluído!');
+    }
+  </script>
+
+</body>
+</html>
